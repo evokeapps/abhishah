@@ -1,5 +1,15 @@
 about_title: About Me
-about_description: |
-  With over 11 years of experience in mechanical engineering, I specialize in designing and optimizing mechanical systems for various industries including robotics, automation, consumer electronics, oil & gas, and medical. My approach combines technical expertise with creative problem-solving to deliver innovative solutions that exceed expectations. 
-
-  I hold a Bachelor's degree in Mechatronics Engineering from Ontario Tech University and have worked with leading companies across multiple industries. My work has been recognized with multiple patents for innovation and efficiency.
+about_description: I’m a mechanical engineer with 11+ years of experience designing and optimizing systems across robotics, automation, consumer electronics, oil & gas, and medical industries. I bring together technical precision and creative problem-solving to deliver innovative, patent-recognized solutions. I hold a B.Eng in Mechatronics from Ontario Tech University and have collaborated with top companies in the field.
+skills:
+  - title: Mechanical System Design
+    image: skill-1.svg
+    description: Design of reliable, high-performance mechanical systems for robotics, automation, and precision applications.
+  - title: CAD Modeling & Simulation
+    image: skill-2.svg
+    description: Skilled in SolidWorks and ANSYS for 3D modeling, stress analysis, and design optimization.
+  - title: Product Development & Prototyping
+    image: skill-3.svg
+    description: From concept to prototype—rapid development, testing, and iteration of functional designs.
+  - title: Cross-Disciplinary Collaboration
+    image: skill-4.svg
+    description: Experienced in integrating mechanical systems with electronics and software in mechatronic products.

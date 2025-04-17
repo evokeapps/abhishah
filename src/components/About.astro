@@ -1,14 +1,31 @@
 ---
 import about from "../../contents/about.yaml";
+import Skill from "./Skill.astro";
 ---
 
 <section
-  class="container text-base-100 py-8 mx-auto max-w-2xl flex flex-col items-center justify-center"
+  class="container gap-4 px-4 text-base-100 py-16 mt-16 md:mt-0 mx-auto flex flex-col items-center justify-center"
 >
-  <h2 class="text-4xl text-secondary font-bold text-center">
-    {about.about_title}
-  </h2>
-  <p class="mt-4 text-lg text-center whitespace-pre-wrap">
-    {about.about_description}
-  </p>
+  <div class="max-w-2xl mb-8 space-y-4">
+    <h2 class="text-4xl text-secondary font-bold text-center">
+      {about.about_title}
+    </h2>
+    <p class="mb-8 text-lg text-center whitespace-pre-wrap">
+      {about.about_description}
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    {
+      about.skills.map((item: any) => {
+        return (
+          <Skill
+            title={item.title}
+            description={item.description}
+            key={item.title}
+            image={item.image}
+          />
+        );
+      })
+    }
+  </div>
 </section>

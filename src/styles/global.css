@@ -4,5 +4,6 @@
 }
 
 body {
+  font-family: Inter, sans-serif;
   @apply bg-gradient-to-b from-[#000319] to-[#1a1a1a];
 }
