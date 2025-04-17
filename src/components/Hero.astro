@@ -1,0 +1,36 @@
+---
+import hero from "./../../contents/hero.yaml";
+import Overview from "./Overview.astro";
+---
+
+<section
+  class="px-4"
+  style="background-image: url('/hero-bg.png'); background-size: cover; background-position: center;"
+>
+  <div class="h-screen flex flex-col justify-center text-base-100">
+    <div
+      class="max-w-4xl gap-4 container mx-auto justify-center flex flex-col mb-8 md:mb-32 items-center"
+    >
+      <img
+        src="/portrait.jpg"
+        alt="Abhishek Shah"
+        class="rounded-full size-32 md:size-52 border-8 border-white/10"
+      />
+      <h1 class="text-3xl md:text-5xl font-bold text-center">
+        <span class="text-primary">{hero.hero_name}</span> - {hero.hero_title}
+      </h1>
+      <p class="text-lg md:text-2xl text-center mb-4">
+        {hero.hero_subtitle}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/projects" class="btn btn-lg md:btn-xl">View Portfolio</a>
+        <a href="/contact" class="btn btn-lg md:btn-xl btn-ghost"
+          >Download Resume</a
+        >
+      </div>
+    </div>
+    <div class="container mx-auto -mb-16 md:-mb-32">
+      <Overview items={hero.overview_items} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: cupcake;
+}
+
+body {
+  @apply bg-[#000319];
+}
