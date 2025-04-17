@@ -8,4 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss(), yaml()],
   },
+  site: "https://evokeapps.github.io/abhishah",
+  base: "abhishah",
 });
