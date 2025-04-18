@@ -7,7 +7,8 @@ const cover = `${settings.base_url}/project-images/${project.cover}`;
 const url = `${settings.base_url}/projects/${project.slug}`;
 ---
 
-<div
+<a
+    href={url}
     class="group flex flex-col cursor-pointer justify-center gap-4 p-4 items-start"
 >
     <!-- Image Container with Zoom -->
@@ -32,14 +33,13 @@ const url = `${settings.base_url}/projects/${project.slug}`;
             {project.tags?.join(", ")}
         </p>
         <!-- View Project Link (slide in) -->
-        <a
-            href={url}
+        <button
             class="absolute transition-all duration-300 transform translate-y-full group-hover:translate-y-0 text-primary font-bold w-full"
             aria-label={`View project: ${project.title}`}
         >
             <div class="flex gap-3 items-center justify-start">
                 <div>View Project</div><ArrowRight />
             </div>
-        </a>
+        </button>
     </div>
-</div>
+</a>

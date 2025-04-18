@@ -11,13 +11,13 @@ export default function Slider({ images }) {
       {images.map((image, index) => {
         return (
           <SplideSlide key={index}>
-            <div className="relative block">
+            <div className="relative block rounded-box h-96 lg:h-[80vh]">
               <img
                 alt={image.description}
-                class="h-96 lg:h-[90vh] object-fill w-auto"
+                class="object-cover h-full w-full rounded-box"
                 src={image.src}
               />
-              <p className="absolute top-0 right-0 left-0 text-zinc-800 p-4 bg-base-100 z-20">
+              <p className="absolute rounded-t-box top-0 right-0 left-0 text-zinc-800 p-4 bg-base-100/50 z-20">
                 {image.description}
               </p>
             </div>
