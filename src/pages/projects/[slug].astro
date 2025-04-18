@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const images = article?.data?.images?.map((image) => {
+const images = article?.data?.images?.map((image: any) => {
   return {
     ...image,
     src: `${settings.base_url}/project-images/${image.src}`,
