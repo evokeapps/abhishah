@@ -4,43 +4,45 @@ import Layout from "../../layouts/Layout.astro";
 import settings from "../../../config/settings.yaml";
 import Slider from "../../components/Slider.jsx";
 import { ArrowLeft } from "lucide-react";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
-    const articles = await getCollection("projects");
-    return articles.map((article) => {
-        return {
-            params: { slug: article.data.slug },
-            props: { article },
-        };
-    });
+  const articles = await getCollection("projects");
+  return articles.map((article: any) => {
+    return {
+      params: { slug: article.data.slug },
+      props: { article },
+    };
+  });
 }
 
 const { article } = Astro.props;
 const images = article?.data?.images?.map((image) => {
-    return {
-        ...image,
-        src: `${settings.base_url}/project-images/${image.src}`,
-    };
+  return {
+    ...image,
+    src: `${settings.base_url}/project-images/${image.src}`,
+  };
 });
 const { Content } = await render(article);
 ---
 
-<Layout title={article.data.title}>
-    <div class="py-8 container mx-auto px-5">
-        <div class="mb-5">
-            <a class="btn btn-ghost" href=`${settings.base_url}`>
-                <ArrowLeft /> Home
-            </a>
-        </div>
-        <div class="grid gap-8 grid-cols-1 lg:grid-cols-2">
-            <div>
-                <Slider client:only images={images} />
-            </div>
-            <div
-                class="prose prose-h1:text-white prose-h2:text-accent prose-p:text-base-100 prose-li:text-base-200 list-disc"
-            >
-                <Content />
-            </div>
-        </div>
+<Layout title={article?.data?.title}>
+  <div class="pb-8 pt-20 container mx-auto px-5">
+    <div class="mb-5">
+      <a class="btn btn-ghost" href=`${settings.base_url}`>
+        <ArrowLeft /> Home
+      </a>
     </div>
+    <div class="grid gap-8 grid-cols-1 lg:grid-cols-2">
+      <div>
+        <Slider client:only images={images} />
+      </div>
+      <div
+        class="prose prose-h1:text-white prose-h2:text-accent prose-p:text-base-100 prose-li:text-base-200 list-disc"
+      >
+        <Content />
+      </div>
+    </div>
+  </div>
+  <Footer />
 </Layout>

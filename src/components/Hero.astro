@@ -28,14 +28,26 @@ import settings from "../../config/settings.yaml";
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Portfolio button -->
-        <a href={`${settings.base_url}/#portfolio`} class="btn btn-lg md:btn-xl"
+        <a
+          href={`${settings.base_url}/#portfolio`}
+          class="btn hover:bg-secondary btn-lg md:btn-xl"
           >View Portfolio <LayoutGrid /></a
         >
         <!-- Download resume button -->
         <a
           href={`${settings.base_url}/#download`}
-          class="btn btn-lg md:btn-xl btn-ghost"
-          >Download Resume <ArrowDownToLine />
+          class="btn btn-lg flex items-center justify-center md:btn-xl btn-ghost group relative overflow-hidden"
+        >
+          <span
+            class="flex items-center justify-center transition-transform duration-300 transform group-hover:-translate-y-full w-full"
+          >
+            Download Resume <ArrowDownToLine />
+          </span>
+          <span
+            class="flex items-center justify-center absolute top-full left-0 w-full h-full transition-transform duration-300 transform group-hover:-translate-y-full bg-base-100 text-base-content"
+          >
+            Download Resume <ArrowDownToLine />
+          </span>
         </a>
       </div>
     </div>
