@@ -2,8 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import settings from "../../../config/settings.yaml";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import Slider from "../../components/Slider.jsx";
 
 export async function getStaticPaths() {
     const articles = await getCollection("projects");
@@ -30,22 +29,7 @@ const { Content } = await render(article);
         class="py-8 container mx-auto gap-8 px-5 grid grid-cols-1 lg:grid-cols-2"
     >
         <div>
-            <Splide client:only="react">
-                {
-                    images.map((image) => {
-                        return (
-                            <SplideSlide>
-                                <img
-                                    alt={image.description}
-                                    class="h-96 lg:h-[90vh]"
-                                    src={image.src}
-                                />
-                                <p>{image.description}</p>
-                            </SplideSlide>
-                        );
-                    })
-                }
-            </Splide>
+            <Slider client:only images={images} />
         </div>
         <div
             class="prose prose-h1:text-white prose-h2:text-accent prose-p:text-base-100 prose-li:text-base-200 list-disc"

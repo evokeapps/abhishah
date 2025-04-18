@@ -2,15 +2,13 @@
 title: Underground Restaurant Drive Thru
 slug: underground-restaurant-drive-thru
 description: A unique dining experience with a drive-thru service
-cover: "/underground-restaurant-drive-thru.png"
+cover: "/underground-restaurant-drive-thru-1.png"
 tags: ["restaurant", "drive-thru", "autonomous", "robotics"]
 images:
   - description: Underground Restaurant Drive Thru
-    src: "underground-restaurant-drive-thru.png"
+    src: "underground-restaurant-drive-thru-1.png"
   - description: Underground Restaurant Drive Thru
     src: "underground-restaurant-drive-thru-2.png"
-  - description: Underground Restaurant Drive Thru
-    src: "underground-restaurant-drive-thru-3.png"
 ---
 
 # Underground Restaurant Drive Thru
