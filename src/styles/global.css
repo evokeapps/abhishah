@@ -1,9 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: cupcake;
+    themes: cupcake;
 }
+@plugin '@tailwindcss/typography';
 
 body {
-  font-family: Inter, sans-serif;
-  @apply bg-gradient-to-b from-[#000319] to-[#1a1a1a];
+    font-family: Inter, sans-serif;
+    @apply bg-gradient-to-b from-[#000319] to-[#1a1a1a];
+    @apply min-h-screen;
+    @apply text-base-100;
+}
+
+li::marker {
+    @apply text-base-100;
 }

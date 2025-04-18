@@ -13,6 +13,7 @@ const projects = defineCollection({
     cover: z.string(),
     slug: z.string(),
     tags: z.array(z.string()),
+    images: z.array(z.any()),
   }),
 });
 
