@@ -1,19 +1,23 @@
 ---
 title: Underground Restaurant Drive Thru
 slug: underground-restaurant-drive-thru
-description: A unique dining experience with a drive-thru service
-cover: "/underground-restaurant-drive-thru-1.png"
-tags: ["restaurant", "drive-thru", "autonomous", "robotics"]
+description: A drive-thru system for an underground restaurant, designed to deliver orders from the kitchen to a temperature-controlled cache outside.
+cover: "drive-thru-1.png"
+tags: [
+  "AUTTR",
+  "Drive Thru",
+  "Underground Restaurant"
+]
 images:
   - description: Installed in Fast Food Drive Thru
-    src: "underground-restaurant-drive-thru-1.png"
+    src: "drive-thru-1.png"
   - description: Installed in Fast Food Kitchen
-    src: "underground-restaurant-drive-thru-2.png"
+    src: "drive-thru-2.png"
   - description: CAD Model of the system
-    src: "underground-restaurant-drive-thru-3.png"
+    src: "drive-thru-3.png"
 videos:
   - description: Product Testing
-    thumbnail: "under-ground-restaurant-drive-thru-4.png"
+    thumbnail: "drive-thru-4.png"
     src: "https://docs.google.com/file/d/1Zdy-otQjCdVyLi0xSFChQUpEcQKY4R9x/preview"
 ---
 

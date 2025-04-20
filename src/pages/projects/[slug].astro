@@ -52,17 +52,24 @@ const { Content } = await render(article);
                     class="grid grid-cols-1 lg:grid-cols-2 5xl:grid-cols-3 gap-4"
                 >
                     {
-                        videos.map((video: any) => (
-                            <div class="flex items-center flex-col relative">
-                                <img
-                                    src={video.thumbnail}
-                                    alt={video.description}
-                                    class="rounded-box object-cover w-full h-96"
-                                />
-                                <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
-                                    {video.description}
+                        videos?.map((video: any) => (
+                            <a
+                                class="cursor-pointer"
+                                href={video.src}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <div class="flex items-center flex-col relative">
+                                    <img
+                                        src={video.thumbnail}
+                                        alt={video.description}
+                                        class="rounded-box object-contain w-full h-96"
+                                    />
+                                    <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
+                                        {video.description}
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         ))
                     }
                     {
@@ -71,7 +78,7 @@ const { Content } = await render(article);
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    class="rounded-box object-cover w-full h-96"
+                                    class="rounded-box object-contain w-full h-96"
                                 />
                                 <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
                                     {image.description}
