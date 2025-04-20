@@ -22,6 +22,12 @@ const images = article?.data?.images?.map((image: any) => {
         src: `${settings.base_url}/project-images/${image.src}`,
     };
 });
+const videos = article?.data?.videos?.map((video: any) => {
+    return {
+        ...video,
+        thumbnail: `${settings.base_url}/project-images/${video.thumbnail}`,
+    };
+});
 const { Content } = await render(article);
 ---
 
@@ -32,30 +38,42 @@ const { Content } = await render(article);
                 <ArrowLeft /> Home
             </a>
         </div>
-        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 items-start">
+        <div class="grid gap-8 grid-cols-1 lg:grid-cols-2 items-start">
             <!-- TEXT: appears first on mobile -->
             <div
-                class="order-1 md:order-2 prose prose-h1:text-white prose-h2:text-accent prose-p:text-base-100 prose-li:text-base-200 list-disc"
+                class="prose prose-h1:text-white prose-h2:text-accent prose-p:text-base-100 prose-li:text-base-200 list-disc"
             >
                 <Content />
             </div>
 
             <!-- IMAGES: below text on mobile, sticky on md+ -->
-            <div
-                class="order-2 md:order-1 md:sticky md:top-24 self-start h-fit"
-            >
+            <div class="lg:sticky lg:top-24 self-start h-fit">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                    class="grid grid-cols-1 lg:grid-cols-2 5xl:grid-cols-3 gap-4"
                 >
+                    {
+                        videos.map((video: any) => (
+                            <div class="flex items-center flex-col relative">
+                                <img
+                                    src={video.thumbnail}
+                                    alt={video.description}
+                                    class="rounded-box object-cover w-full h-96"
+                                />
+                                <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
+                                    {video.description}
+                                </div>
+                            </div>
+                        ))
+                    }
                     {
                         images.map((image: any) => (
                             <div class="flex items-center flex-col relative">
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    class="rounded-box object-fill h-full"
+                                    class="rounded-box object-cover w-full h-96"
                                 />
-                                <div class="absolute bg-neutral/50 bottom-0 rounded-b-box p-2 right-0 left-0">
+                                <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
                                     {image.description}
                                 </div>
                             </div>

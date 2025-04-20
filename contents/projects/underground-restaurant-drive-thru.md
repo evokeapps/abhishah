@@ -5,10 +5,16 @@ description: A unique dining experience with a drive-thru service
 cover: "/underground-restaurant-drive-thru-1.png"
 tags: ["restaurant", "drive-thru", "autonomous", "robotics"]
 images:
-  - description: Underground Restaurant Drive Thru
+  - description: Installed in Fast Food Drive Thru
     src: "underground-restaurant-drive-thru-1.png"
-  - description: Underground Restaurant Drive Thru
+  - description: Installed in Fast Food Kitchen
     src: "underground-restaurant-drive-thru-2.png"
+  - description: CAD Model of the system
+    src: "underground-restaurant-drive-thru-3.png"
+videos:
+  - description: Product Testing
+    thumbnail: "under-ground-restaurant-drive-thru-4.png"
+    src: "https://docs.google.com/file/d/1Zdy-otQjCdVyLi0xSFChQUpEcQKY4R9x/preview"
 ---
 
 # Underground Restaurant Drive Thru

@@ -14,6 +14,7 @@ const projects = defineCollection({
     slug: z.string(),
     tags: z.array(z.string()),
     images: z.array(z.any()),
+    videos: z.array(z.any()).optional(),
   }),
 });
 
