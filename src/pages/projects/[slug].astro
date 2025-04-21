@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import settings from "../../../config/settings.yaml";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layouts/Layout.astro";
+import VideoCard from "../../components/VideoCard.jsx";
+import ImageCard from "../../components/ImageCard.jsx";
 
 export async function getStaticPaths() {
     const articles = await getCollection("projects");
@@ -53,37 +55,12 @@ const { Content } = await render(article);
                 >
                     {
                         videos?.map((video: any) => (
-                            <a
-                                class="cursor-pointer"
-                                href={video.src}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <div class="flex items-center shadow-sm flex-col relative">
-                                    <img
-                                        src={video.thumbnail}
-                                        alt={video.description}
-                                        class="rounded-box object-contain w-full aspect-square"
-                                    />
-                                    <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
-                                        {video.description}
-                                    </div>
-                                </div>
-                            </a>
+                            <VideoCard client:only="react" video={video} />
                         ))
                     }
                     {
                         images.map((image: any) => (
-                            <div class="flex shadow-sm items-center flex-col relative">
-                                <img
-                                    src={image.src}
-                                    alt={image.alt}
-                                    class="rounded-box object-contain w-full aspect-square"
-                                />
-                                <div class="absolute bg-neutral/75 text-md lg:text-sm bottom-0 rounded-b-box p-2 right-0 left-0">
-                                    {image.description}
-                                </div>
-                            </div>
+                            <ImageCard client:only="react" image={image} />
                         ))
                     }
                 </div>
